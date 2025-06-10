@@ -18,7 +18,12 @@ namespace Sae_2._01
     {
         public MainWindow()
         {
+            InitializeComponent();
+        }
 
+        private void ButFicheClient_Click(object sender, RoutedEventArgs e)
+        {
+            Conteneur.Content = new fic();
         }
     }
 }

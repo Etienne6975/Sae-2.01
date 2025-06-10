@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="Sae_2._01.synthese_sessions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Sae_2._01.Model"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="584"
+    d:DesignWidth="550"
+    mc:Ignorable="d">
+    <Grid>
+        <DataGrid
+            Width="514"
+            Height="195"
+            Margin="0,196,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            d:ItemsSource="{Binding client}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding numclient}"
+                    Header="Numero Client" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding nomclient}"
+                    Header="Nom" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding prenomclient}"
+                    Header="Prenom" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding datenaissance}"
+                    Header="date de naissance" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding tel}"
+                    Header="telephone" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding email}"
+                    Header="Email" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>
