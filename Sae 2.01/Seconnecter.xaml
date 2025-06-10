@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sae_2._01"
         mc:Ignorable="d"
-        Title="Seconnecter" Height="450" Width="800">
+        Title="Seconnecter" Height="600" Width="900">
     <Grid>
         <StackPanel Margin="184,69,184,10" Width="432">
             <TextBlock Text="Identifiant" Margin="0,5" Width="62"/>
             <TextBox x:Name="txtIdentifiant" Width="200"/>
             <TextBlock Text="Mot de passe" Margin="0,10,0,5" Width="81"/>
             <PasswordBox x:Name="txtMotDePasse" Width="200"/>
-            <Button Content="Se connecter" Width="120" Margin="0,20,0,0" ></Button>
+            <Button x:Name="ButLogin" Content="Se connecter" Width="120" Margin="0,20,0,0" Click="ButLogin_Click" ></Button>
         </StackPanel>
     </Grid>
 </Window>

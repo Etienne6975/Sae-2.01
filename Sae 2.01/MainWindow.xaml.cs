@@ -18,7 +18,7 @@ namespace Sae_2._01
     {
         public MainWindow()
         {
-            InitializeComponent();
+
         }
     }
 }
