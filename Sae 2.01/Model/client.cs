@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Npgsql;
+using Sae_2._01.Model;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +17,7 @@ namespace table
         private DateTime datenaissance;
         private string tel;
         private string email;
+        private ObservableCollection<client> lesclients;
 
         public client()
         {
@@ -105,6 +109,18 @@ namespace table
             {
                 this.email = value;
             }
+        }
+        public List<client> FindAll()
+        {
+            List<client> lesclients = new List<client>();
+            using (NpgsqlCommand cmdSelect = new NpgsqlCommand("select * from chiens ;"))
+            {
+                DataTable dt = DataAccess.Instance.ExecuteSelect(cmdSelect);
+                foreach (DataRow dr in dt.Rows)
+                    lesclients.Add(new client((Int32)dr["numclient"], (string)dr["nomclient"],
+                   (String)dr["prenomclient"], (DateTime)dr["datenaissance"], (string)dr["tel"], (string)dr["email"]));
+            }
+            return lesclients;
         }
     }
 }

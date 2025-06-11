@@ -18,7 +18,7 @@
             d:ItemsSource="{Binding client}">
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="*"
+                    Width="100"
                     Binding="{Binding numclient}"
                     Header="Numero Client" />
                 <DataGridTextColumn
@@ -30,7 +30,7 @@
                     Binding="{Binding prenomclient}"
                     Header="Prenom" />
                 <DataGridTextColumn
-                    Width="*"
+                    Width=""
                     Binding="{Binding datenaissance}"
                     Header="date de naissance" />
                 <DataGridTextColumn

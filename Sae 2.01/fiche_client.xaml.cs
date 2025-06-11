@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using table;
 
 namespace Sae_2._01
 {
@@ -20,6 +21,7 @@ namespace Sae_2._01
     /// </summary>
     public partial class synthese_sessions : UserControl
     {
+        public client Leclient { get; set; }
         public synthese_sessions()
         {
            // ChargeData;
@@ -30,8 +32,7 @@ namespace Sae_2._01
         {
             try
             {
-              //  LaPension = new Pension("Pension dog");
-          //      this.DataContext = LaPension;
+                
             }
             catch (Exception ex)
             {
