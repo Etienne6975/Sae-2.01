@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sae_2._01"
         mc:Ignorable="d">
-    <Grid Margin="10">
+     <Grid Margin="10">
         <DataGrid x:Name="dataGridCours" AutoGenerateColumns="False" HeadersVisibility="Column" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Semaine" Binding="{Binding Semaine}" Width="*" />
@@ -19,4 +19,5 @@
         </DataGrid>
     </Grid>
 
+ 
 </UserControl>

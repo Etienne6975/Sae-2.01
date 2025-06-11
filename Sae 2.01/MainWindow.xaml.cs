@@ -19,9 +19,11 @@ namespace Sae_2._01
     {
         public MainWindow()
         {
-            //Seconnecter seconnecter = new Seconnecter();
-            //seconnecter.ShowDialog();
+            Hide();
+            Seconnecter seconnecter = new Seconnecter();
+            seconnecter.ShowDialog();
             InitializeComponent();
+            Show();
         }
 
         private void ButFicheClient_Click(object sender, RoutedEventArgs e)
@@ -39,6 +41,11 @@ namespace Sae_2._01
             {
                 e.Cancel = true; 
             }
+        }
+
+        private void Accueil_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

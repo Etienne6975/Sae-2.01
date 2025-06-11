@@ -25,9 +25,11 @@
             <ColumnDefinition Width="80*" />
         </Grid.ColumnDefinitions>
         <StackPanel
+
             x:Name="StackPanelLogo"
             Grid.Row="0"
             Grid.Column="2" />
+            <Image Source="/Images/ESF.jpg" Height="200" Margin="0,20" HorizontalAlignment="Center"/>
         <StackPanel
             x:Name="StackPanelFond"
             Grid.Row="0"
@@ -53,7 +55,9 @@
                     Height="70"
                     FontSize="12"
                     FontWeight="Bold"
-                    Header="ACCUEIL" />
+                    Header="ACCUEIL">
+                    <uc:Accueil Loaded="Accueil_Loaded"/>
+                </TabItem>
                 <TabItem
                     x:Name="Butinscrit"
                     Height="70"
