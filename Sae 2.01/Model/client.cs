@@ -17,7 +17,7 @@ namespace table
         private DateTime datenaissance;
         private string tel;
         private string email;
-        private ObservableCollection<client> lesclients;
+        
 
         public client()
         {
@@ -112,15 +112,20 @@ namespace table
         }
         public List<client> FindAll()
         {
-            List<client> lesclients = new List<client>();
-            using (NpgsqlCommand cmdSelect = new NpgsqlCommand("select * from chiens ;"))
+            List<client> lesClients = new List<client>();
+            using (NpgsqlCommand cmdSelect = new NpgsqlCommand("select * from client ;"))
             {
                 DataTable dt = DataAccess.Instance.ExecuteSelect(cmdSelect);
                 foreach (DataRow dr in dt.Rows)
-                    lesclients.Add(new client((Int32)dr["numclient"], (string)dr["nomclient"],
-                   (String)dr["prenomclient"], (DateTime)dr["datenaissance"], (string)dr["tel"], (string)dr["email"]));
+                    lesClients.Add(new client(
+                        (Int32)dr["numclient"], 
+                        (string)dr["nomclient"],
+                        (String)dr["prenomclient"], 
+                        DateTime.Parse(dr["datenaissance"].ToString()), 
+                        (string)dr["tel"], 
+                        (string)dr["email"]));
             }
-            return lesclients;
+            return lesClients;
         }
     }
 }

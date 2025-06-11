@@ -19,27 +19,14 @@ namespace Sae_2._01
     /// <summary>
     /// Logique d'interaction pour synthese_sessions.xaml
     /// </summary>
-    public partial class synthese_sessions : UserControl
+    public partial class fiche_client : UserControl
     {
-        public client Leclient { get; set; }
-        public synthese_sessions()
+        
+        public fiche_client()
         {
-           // ChargeData;
             InitializeComponent();
         }
 
-        public void ChargeData()
-        {
-            try
-            {
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Problème lors de récupération des données,veuillez consulter votre admin");
-
-                Application.Current.Shutdown();
-            }
-        }
+        
     }
 }
