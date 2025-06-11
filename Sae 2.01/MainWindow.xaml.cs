@@ -18,12 +18,14 @@ namespace Sae_2._01
     {
         public MainWindow()
         {
+            Seconnecter seconnecter = new Seconnecter();
+            seconnecter.ShowDialog();
             InitializeComponent();
         }
 
         private void ButFicheClient_Click(object sender, RoutedEventArgs e)
         {
-            Conteneur.Content = new fic();
+           // Conteneur.Content = new fic();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Sae_2._01
     {
         public synthese_sessions()
         {
-            ChargeData;
+           // ChargeData;
             InitializeComponent();
         }
 
@@ -30,8 +30,8 @@ namespace Sae_2._01
         {
             try
             {
-                LaPension = new Pension("Pension dog");
-                this.DataContext = LaPension;
+              //  LaPension = new Pension("Pension dog");
+          //      this.DataContext = LaPension;
             }
             catch (Exception ex)
             {

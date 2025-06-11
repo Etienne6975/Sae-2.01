@@ -78,17 +78,17 @@ namespace table
             }
         }
 
-        public string Nomrole
-        {
-            get
-            {
-                return this.nomrole;
-            }
+      // public string Nomrole
+        //{
+         //   get
+          //  {
+               // return this.nomrole;
+         //   }
 
-            set
-            {
-                this.nomrole = value;
-            }
-        }
+           // set
+         //  {
+            //   this.nomrole = value;
+           // }
+       // }
     }
 }
