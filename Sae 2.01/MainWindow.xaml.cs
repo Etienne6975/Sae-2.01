@@ -32,7 +32,7 @@ namespace Sae_2._01
 
         private void ButFicheClient_Click(object sender, RoutedEventArgs e)
         {
-           // Conteneur.Content = new fic();
+            
         }
         private void Window_Closing(object sender, CancelEventArgs e)
         {

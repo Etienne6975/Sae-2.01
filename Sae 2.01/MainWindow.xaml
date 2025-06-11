@@ -78,6 +78,7 @@
                     FontSize="12"
                     FontWeight="Bold"
                     Header="FICHE CLIENTS">
+                    <uc:fiche_client/>
                 </TabItem>
             </TabControl>
         </StackPanel>
