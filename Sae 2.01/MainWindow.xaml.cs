@@ -19,7 +19,7 @@ namespace Sae_2._01
     /// </summary>
     public partial class MainWindow : Window
     {
-        public client lesClients { get; set; }
+        public static client lesClients  { get; set; }
         public MainWindow()
         {
             ChargeData();
