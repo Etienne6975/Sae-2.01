@@ -1,74 +1,111 @@
-﻿<Window x:Class="Sae_2._01.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Sae_2._01"
-        mc:Ignorable="d"
-          Title="ESF Menu" Height="600" Width="900"
-        Background="#F5F5F5" WindowStartupLocation="CenterScreen">
-
-    <Grid>
+﻿<Window
+    x:Class="Sae_2._01.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Sae_2._01"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="clr-namespace:Sae_2._01"
+    x:Name="window"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized"
+    mc:Ignorable="d"
+    Closing="Window_Closing">
+    <Grid x:Name="LaGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="350"/>
-
-            <ColumnDefinition Width="*"/>
-
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="80*" />
         </Grid.ColumnDefinitions>
+        <StackPanel
 
-        <StackPanel Grid.Column="0" Background="#E30613" VerticalAlignment="Stretch">
-
-
-            <StackPanel Margin="0,150,0,0" HorizontalAlignment="Center">
-
-                <StackPanel Margin="0,10" HorizontalAlignment="Center">
-                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE80F;" Foreground="Black" HorizontalAlignment="Center"/>
-                    <Button Content="Accueil" Width="160" Height="30" 
-                            Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Style="{StaticResource ESFStyle}"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,40" HorizontalAlignment="Center">
-                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE77B;" Foreground="Black" HorizontalAlignment="Center"/>
-                    <Button Content="Faire inscription" Width="160" Height="30"
-                            Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Style="{StaticResource ESFStyle}"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,10,0,50" HorizontalAlignment="Center">
-                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE8A5;" Foreground="Black" HorizontalAlignment="Center"/>
-                    <Button x:Name="ButFicheClient" Content="Fiche Client" Width="160" Height="30"
-                            Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,-5" Style="{StaticResource ESFStyle}" Click="ButFicheClient_Click"/>
-                </StackPanel>
-                <StackPanel Margin="0,10" HorizontalAlignment="Center">
-                <TextBlock  Foreground="Black" HorizontalAlignment="Center"/>
-                <Button Content="Synthèse des sessions" Width="160" Height="30" Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Style="{StaticResource ESFStyle}"/>
-            </StackPanel>
-
+            x:Name="StackPanelLogo"
+            Grid.Row="0"
+            Grid.Column="2" />
+            <Image Source="/Images/ESF.jpg" Height="200" Margin="0,20" HorizontalAlignment="Center"/>
+        <StackPanel
+            x:Name="StackPanelFond"
+            Grid.Row="0"
+            Grid.Column="0"
+            Background="#FFE30613">
+            <TextBlock
+                x:Name="TxtBlockConnexion"
+                Width="{Binding ActualWidth, ElementName=StackPanelFond, Mode=OneWay}"
+                Height="{Binding ActualHeight, ElementName=StackPanelFond, Mode=OneWay}"
+                FontWeight="Bold"
+                Foreground="White"
+                Text="Connecté en tant que -&#x0a;Etienne MASSON"
+                TextAlignment="Center"
+                TextWrapping="Wrap" />
         </StackPanel>
+        <StackPanel
+            x:Name="StackPanelMenu"
+            Grid.Row="1"
+            Grid.ColumnSpan="2">
+            <TabControl Height="{Binding ActualHeight, ElementName=window, Mode=OneWay}" TabStripPlacement="Left">
+                <TabItem
+                    Width="{Binding ActualWidth, ElementName=StackPanelFond, Mode=OneWay}"
+                    Height="70"
+                    FontSize="12"
+                    FontWeight="Bold"
+                    Header="ACCUEIL">
+                    <uc:Accueil Loaded="Accueil_Loaded"/>
+                </TabItem>
+                <TabItem
+                    x:Name="Butinscrit"
+                    Height="70"
+                    FontSize="12"
+                    FontWeight="Bold"
+                    Header="FAIRE INSCRIPTION">
+                    <uc:Saisi_client />
+                </TabItem>
+                <TabItem
+                    Height="70"
+                    FontSize="12"
+                    FontWeight="Bold"
+                    Header="SYNTHESE DES SESSIONS" >
+                    <uc:DetailWindow />
+                </TabItem>
+                <TabItem
+                    Height="70"
+                    FontSize="12"
+                    FontWeight="Bold"
+                    Header="FICHE CLIENTS">
+                </TabItem>
+            </TabControl>
         </StackPanel>
-        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
-
-            <Button Width="300" Height="100" Background="#E30613" Foreground="White" BorderThickness="0" Cursor="Hand" Margin="0,0,0,36" Style="{StaticResource ESFStyle}">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xEB52;" FontSize="36" Foreground="Black" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Faire une inscription" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-
-            <Button Width="300" Height="100" Background="#E30613" Foreground="White" BorderThickness="0" Cursor="Hand" Margin="0,0,0,33" Style="{StaticResource ESFStyle}">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE77B;" FontSize="36" Foreground="Black" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Fiche Client" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-
-            <Button Width="300" Height="100" Background="#E30613" Foreground="White" BorderThickness="0" Cursor="Hand" Margin="0,0,0,40" Style="{StaticResource ESFStyle}">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                    <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE8A5;" FontSize="36" Foreground="Black" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Synthèse des sessions" FontSize="18" FontWeight="SemiBold" HorizontalAlignment="Center"/>
-                </StackPanel>
+        <StackPanel
+            x:Name="StackPanelDeconnexion"
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="0,0,0,0"
+            Background="#FFE30613">
+            <Button
+                x:Name="ButDeconnexion"
+                Width="{Binding ActualWidth, ElementName=StackPanelDeconnexion, Mode=OneWay}"
+                Height="32"
+                Background="#FFE30613"
+                BorderBrush="#FFE30613"
+                Content="Déconnexion"
+                FontWeight="Bold"
+                Foreground="White"
+                RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform AngleX="0" />
+                        <RotateTransform />
+                        <TranslateTransform X="0" />
+                    </TransformGroup>
+                </Button.RenderTransform>
             </Button>
         </StackPanel>
-        <ContentControl x:Name="Conteneur" Grid.Column="1"/>
     </Grid>
 </Window>
-

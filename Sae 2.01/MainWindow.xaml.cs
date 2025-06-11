@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.ComponentModel;
+using System.Net;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,14 +23,33 @@ namespace Sae_2._01
         public MainWindow()
         {
             ChargeData();
+            Hide();
             Seconnecter seconnecter = new Seconnecter();
             seconnecter.ShowDialog();
             InitializeComponent();
+            Show();
         }
 
         private void ButFicheClient_Click(object sender, RoutedEventArgs e)
         {
            // Conteneur.Content = new fic();
+        }
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Voulez-vous vraiment quitter l'application ?", "Confirmation",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
+
+            if (result != MessageBoxResult.Yes)
+            {
+                e.Cancel = true; 
+            }
+        }
+
+        private void Accueil_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
         public void ChargeData()
         {
@@ -46,4 +66,5 @@ namespace Sae_2._01
             }
         }
     }
+
 }

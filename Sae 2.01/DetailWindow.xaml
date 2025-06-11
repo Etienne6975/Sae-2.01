@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Sae_2._01.DetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sae_2._01"
+        mc:Ignorable="d">
+     <Grid Margin="10">
+        <DataGrid x:Name="dataGridCours" AutoGenerateColumns="False" HeadersVisibility="Column" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Semaine" Binding="{Binding Semaine}" Width="*" />
+                <DataGridTextColumn Header="Créneaux" Binding="{Binding Creneaux}" Width="2*" />
+                <DataGridTextColumn Header="Catégorie" Binding="{Binding Categorie}" Width="*" />
+                <DataGridTextColumn Header="Discipline" Binding="{Binding Discipline}" Width="*" />
+                <DataGridTextColumn Header="Public" Binding="{Binding Public}" Width="*" />
+                <DataGridTextColumn Header="Nombre max" Binding="{Binding NombreMax}" Width="*" />
+                <DataGridTextColumn Header="Places restantes" Binding="{Binding PlacesRestantes}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+ 
+</UserControl>
