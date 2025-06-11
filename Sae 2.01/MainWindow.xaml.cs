@@ -18,8 +18,8 @@ namespace Sae_2._01
     {
         public MainWindow()
         {
-            Seconnecter seconnecter = new Seconnecter();
-            seconnecter.ShowDialog();
+            //Seconnecter seconnecter = new Seconnecter();
+            //seconnecter.ShowDialog();
             InitializeComponent();
         }
 
