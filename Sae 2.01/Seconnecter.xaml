@@ -9,26 +9,20 @@
 
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
-                <!-- Logo ESF -->
-                
 
-                <!-- Titre -->
+             
                 <TextBlock Text="Connexion" FontSize="20" FontWeight="Bold" Foreground="#E30613" HorizontalAlignment="Center"/>
 
-                <!-- Champ Identifiant -->
                 <StackPanel>
                     <TextBlock Text="Identifiant" Margin="0,5,0,2" Foreground="Gray"/>
                     <TextBox x:Name="UsernameTextBox" Height="30" Background="#FFF" BorderBrush="#CCC" BorderThickness="1" />
                 </StackPanel>
 
-                <!-- Champ Mot de passe -->
                 <StackPanel>
                     <TextBlock Text="Mot de passe" Margin="0,5,0,2" Foreground="Gray"/>
                     <PasswordBox x:Name="PasswordBox" Height="30" Background="#FFF" BorderBrush="#CCC" BorderThickness="1" />
                 </StackPanel>
-
-                <!-- Bouton Connexion -->
-                <Button x:Name="Connexion_Click" Content="Connexion"
+                        <Button x:Name="Connexion_Click" Content="Connexion"
                         Height="35"
                         Style="{StaticResource ESFStyle}" ></Button>
 

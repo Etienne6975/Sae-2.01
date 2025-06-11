@@ -25,7 +25,22 @@ namespace Sae_2._01
         }
         private void ButLogin_Click(object sender, RoutedEventArgs e)
         {
+            string username = UsernameTextBox.Text;
+            string password = PasswordBox.Password;
 
+            if (username == "admin" && password == "esf")
+            {
+
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+
+                this.Close();
+            }
+            else
+            {
+                // Message d'erreur
+                MessageBox.Show("Identifiants incorrects", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
