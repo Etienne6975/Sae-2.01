@@ -32,8 +32,8 @@
 
                 <StackPanel Margin="0,10,0,50" HorizontalAlignment="Center">
                     <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE8A5;" Foreground="Black" HorizontalAlignment="Center"/>
-                    <Button x:Name="ButSaisiClient" Content="Saisi Client" Width="160" Height="30"
-                     Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,-5" Style="{StaticResource ESFStyle}" Click="ButFicheClient_Click"/>
+                    <Button x:Name="ButSaisiClient" Content="Saisi Client" Width="160" Height="30" Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,-5" Style="{StaticResource ESFStyle}" Click="ButFicheClient_Click"/>
+                     
                 </StackPanel>
                 <StackPanel Margin="0,10" HorizontalAlignment="Center">
                     <TextBlock  Foreground="Black" HorizontalAlignment="Center"/>
