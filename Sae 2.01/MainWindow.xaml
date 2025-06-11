@@ -12,7 +12,8 @@
     Height="450"
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Closing="Window_Closing">
     <Grid x:Name="LaGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="10*" />
@@ -26,11 +27,7 @@
         <StackPanel
             x:Name="StackPanelLogo"
             Grid.Row="0"
-            Grid.Column="2">
-            <StackPanel.Background>
-                <ImageBrush x:Name="ImageLogoESF" ImageSource="Images\ESF.jpg" Stretch="Uniform" />
-            </StackPanel.Background>
-        </StackPanel>
+            Grid.Column="2" />
         <StackPanel
             x:Name="StackPanelFond"
             Grid.Row="0"
@@ -58,20 +55,26 @@
                     FontWeight="Bold"
                     Header="ACCUEIL" />
                 <TabItem
+                    x:Name="Butinscrit"
                     Height="70"
                     FontSize="12"
                     FontWeight="Bold"
-                    Header="FICHE CLIENT" />
+                    Header="FAIRE INSCRIPTION">
+                    <uc:Saisi_client />
+                </TabItem>
                 <TabItem
                     Height="70"
                     FontSize="12"
                     FontWeight="Bold"
-                    Header="SYNTHESE DES SESSIONS" />
+                    Header="SYNTHESE DES SESSIONS" >
+                    <uc:DetailWindow />
+                </TabItem>
                 <TabItem
                     Height="70"
                     FontSize="12"
                     FontWeight="Bold"
-                    Header="FICHE CLIENTS" />
+                    Header="FICHE CLIENTS">
+                </TabItem>
             </TabControl>
         </StackPanel>
         <StackPanel

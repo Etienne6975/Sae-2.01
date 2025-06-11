@@ -1,47 +1,11 @@
-﻿<Window x:Class="Sae_2._01.Saisi_client"
+﻿<UserControl x:Class="Sae_2._01.Saisi_client"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sae_2._01"
-        mc:Ignorable="d"
-        Title="Saisi_client" Height="600" Width="900">
+        mc:Ignorable="d" Height="400" Width="500">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="350"/>
-
-            <ColumnDefinition Width="*"/>
-
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0" Background="#E30613" VerticalAlignment="Stretch">
-
-
-            <StackPanel Margin="0,150,0,0" HorizontalAlignment="Center">
-
-                <StackPanel Margin="0,10" HorizontalAlignment="Center">
-                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE80F;" Foreground="Black" HorizontalAlignment="Center"/>
-                    <Button Content="Accueil" Width="160" Height="30" 
-                     Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Style="{StaticResource ESFStyle}"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,40" HorizontalAlignment="Center">
-                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE77B;" Foreground="Black" HorizontalAlignment="Center"/>
-                    <Button Content="Faire inscription" Width="160" Height="30"
-                     Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Style="{StaticResource ESFStyle}"/>
-                </StackPanel>
-
-                <StackPanel Margin="0,10,0,50" HorizontalAlignment="Center">
-                    <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="24" Text="&#xE8A5;" Foreground="Black" HorizontalAlignment="Center"/>
-                    <Button x:Name="ButSaisiClient" Content="Saisi Client" Width="160" Height="30" Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Margin="0,0,0,-5" Style="{StaticResource ESFStyle}" Click="ButFicheClient_Click"/>
-                     
-                </StackPanel>
-                <StackPanel Margin="0,10" HorizontalAlignment="Center">
-                    <TextBlock  Foreground="Black" HorizontalAlignment="Center"/>
-                    <Button Content="Synthèse des sessions" Width="160" Height="30" Background="#E30613" Foreground="White" BorderBrush="Black" BorderThickness="1" Style="{StaticResource ESFStyle}"/>
-                </StackPanel>
-
-            </StackPanel>
-        </StackPanel>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Grid.Column="1" >
 
             <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="3" Padding="5">
@@ -111,8 +75,9 @@
                     Foreground="White"
                     FontWeight="Bold"
                     BorderBrush="Transparent"
+                    Style="{StaticResource ESFStyle}"
                     Margin="0,20,0,0"
                     Cursor="Hand"/>
         </StackPanel>
     </Grid>
-</Window>
+</UserControl>

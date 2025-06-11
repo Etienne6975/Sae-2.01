@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,25 +24,25 @@ namespace Sae_2._01
         {
             InitializeComponent();
         }
-        private void ButLogin_Click(object sender, RoutedEventArgs e)
+        private void Connexion_Click(object sender, RoutedEventArgs e)
         {
-            string username = nameTextBox.Text;
-            string password = PasswordBox.Password;
+            string identifiant = nameTextBox.Text;
+            string motDePasse = PasswordBox.Password;
 
-            if (username == "admin" && password == "esf")
+            if (identifiant == "admin" && motDePasse == "1234")
             {
-
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.ShowDialog();
-
+                MainWindow main = new MainWindow();
+                main.ShowDialog();
                 this.Close();
             }
             else
             {
-                // Message d'erreur
-                MessageBox.Show("Identifiants incorrects", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Identifiant ou mot de passe incorrect.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
         }
+
+     
     }
 }
      

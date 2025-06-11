@@ -17,21 +17,13 @@ namespace Sae_2._01
     /// <summary>
     /// Logique d'interaction pour DetailWindow.xaml
     /// </summary>
-    public partial class DetailWindow : Window
+    public partial class DetailWindow : UserControl
     {
-        public DetailWindow(Inscription inscription)
+        public DetailWindow()
         {
             InitializeComponent();
-            txtSemaine.Text = inscription.Semaine.ToString();
-            txtDate.Text = inscription.Date1;
-            txtHoraire.Text = inscription.Horaire1;
-            txtCategorie.Text = inscription.Categorie1;
-            txtNiveau.Text = inscription.Niveau1.ToString();
         }
+       
 
-        private void Fermer_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
     }
 }

@@ -17,7 +17,7 @@ namespace Sae_2._01
     /// <summary>
     /// Logique d'interaction pour Saisi_client.xaml
     /// </summary>
-    public partial class Saisi_client : Window
+    public partial class Saisi_client : UserControl
     {
         public Saisi_client()
         {
