@@ -65,6 +65,16 @@ namespace Sae_2._01
                 Application.Current.Shutdown();
             }
         }
+
+        private void ButDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void ButDeconnexion_Click_1(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 
 }
