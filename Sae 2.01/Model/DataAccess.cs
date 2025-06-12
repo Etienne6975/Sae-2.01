@@ -11,7 +11,7 @@ namespace Sae_2._01.Model
     public class DataAccess
     {
         private static readonly DataAccess instance = new DataAccess();
-        private readonly string connectionString = "Host=srv-peda-new;Port=5433;Username=atake;Password=9YPUaF;Database=SAE201_ESF;Options='-c search_path=ESF'";
+        private readonly string connectionString = "Host=srv-peda-new;Port=5433;Username=atake;Password=9YPUaF;Database=SAE201_ESF;Options='-c search_path=atake'";
         private NpgsqlConnection connection;
 
         public static DataAccess Instance

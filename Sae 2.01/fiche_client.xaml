@@ -4,10 +4,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Sae_2._01.Model"
+    xmlns:model="clr-namespace:Sae_2._01.Model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="584"
     d:DesignWidth="550"
     mc:Ignorable="d">
+    <UserControl.DataContext>
+        <model:Gestion x:Name="lagestion" />
+    </UserControl.DataContext>
     <Grid>
         <DataGrid
             Width="514"
@@ -20,27 +24,27 @@
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding numclient}"
+                    Binding="{Binding Numclient}"
                     Header="Numero Client" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding nomclient}"
+                    Binding="{Binding Nomclient}"
                     Header="Nom" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding prenomclient}"
+                    Binding="{Binding Prenomclient}"
                     Header="Prenom" />
                 <DataGridTextColumn
                     Width="120"
-                    Binding="{Binding datenaissance}"
+                    Binding="{Binding Datenaissance}"
                     Header="date de naissance" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding tel}"
+                    Binding="{Binding Tel}"
                     Header="telephone" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding email}"
+                    Binding="{Binding Email}"
                     Header="Email" />
             </DataGrid.Columns>
         </DataGrid>
