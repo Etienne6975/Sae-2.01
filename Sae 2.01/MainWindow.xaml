@@ -7,106 +7,58 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:uc="clr-namespace:Sae_2._01"
     x:Name="window"
-    Title="MainWindow"
-    Width="800"
-    Height="450"
+    Title="ESF - Application Gestion"
+    Width="1000"
+    Height="700"
     WindowStartupLocation="CenterScreen"
     WindowState="Maximized"
     mc:Ignorable="d"
     Closing="Window_Closing">
-    <Grid x:Name="LaGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="80*" />
-            <RowDefinition Height="10*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20*" />
-            <ColumnDefinition Width="80*" />
-        </Grid.ColumnDefinitions>
-        <StackPanel
 
-            x:Name="StackPanelLogo"
-            Grid.Row="0"
-            Grid.Column="2" />
-            <Image Source="/Images/ESF.jpg" Height="200" Margin="0,20" HorizontalAlignment="Center"/>
-        <StackPanel
-            x:Name="StackPanelFond"
-            Grid.Row="0"
-            Grid.Column="0"
-            Background="#FFE30613">
-            <TextBlock
-                x:Name="TxtBlockConnexion"
-                Width="{Binding ActualWidth, ElementName=StackPanelFond, Mode=OneWay}"
-                Height="{Binding ActualHeight, ElementName=StackPanelFond, Mode=OneWay}"
-                FontWeight="Bold"
-                Foreground="White"
-                Text="Connecté en tant que -&#x0a;Etienne MASSON"
-                TextAlignment="Center"
-                TextWrapping="Wrap" />
-        </StackPanel>
-        <StackPanel
-            x:Name="StackPanelMenu"
-            Grid.Row="1"
-            Grid.ColumnSpan="2">
-            <TabControl Height="{Binding ActualHeight, ElementName=window, Mode=OneWay}" TabStripPlacement="Left">
-                <TabItem
-                    Width="{Binding ActualWidth, ElementName=StackPanelFond, Mode=OneWay}"
-                    Height="70"
-                    FontSize="12"
-                    FontWeight="Bold"
-                    Header="ACCUEIL">
-                    <uc:Accueil Loaded="Accueil_Loaded"/>
-                </TabItem>
-                <TabItem
-                    x:Name="Butinscrit"
-                    Height="70"
-                    FontSize="12"
-                    FontWeight="Bold"
-                    Header="FAIRE INSCRIPTION">
-                    <uc:Saisi_client />
-                </TabItem>
-                <TabItem
-                    Height="70"
-                    FontSize="12"
-                    FontWeight="Bold"
-                    Header="SYNTHESE DES SESSIONS" >
-                    <uc:DetailWindow />
-                </TabItem>
-                <TabItem
-                    Height="70"
-                    FontSize="12"
-                    FontWeight="Bold"
-                    Header="FICHE CLIENTS">
-                    <uc:fiche_client/>
-                </TabItem>
-            </TabControl>
-        </StackPanel>
-        <StackPanel
-            x:Name="StackPanelDeconnexion"
-            Grid.Row="2"
-            Grid.Column="0"
-            Margin="0,0,0,0"
-            Background="#FFE30613">
-            <Button
-                x:Name="ButDeconnexion"
-                Width="{Binding ActualWidth, ElementName=StackPanelDeconnexion, Mode=OneWay}"
-                Height="32"
-                Background="#FFE30613"
-                BorderBrush="#FFE30613"
-                Content="Déconnexion"
-                FontWeight="Bold"
-                Foreground="White"
-                RenderTransformOrigin="0.5,0.5">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform />
-                        <SkewTransform AngleX="0" />
-                        <RotateTransform />
-                        <TranslateTransform X="0" />
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
-        </StackPanel>
-    </Grid>
+    <DockPanel Background="White">
+
+        <!-- Barre du haut -->
+        <DockPanel DockPanel.Dock="Top" Height="80" Background="#FFE30613" LastChildFill="True">
+            <!-- Logo -->
+            <Image Source="/Images/ESF.jpg" Height="60" Margin="10" VerticalAlignment="Center" />
+
+            <!-- Texte utilisateur -->
+            <TextBlock Text="Connecté en tant que Etienne MASSON"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       Margin="10,0"
+                       FontSize="14" />
+
+            <!-- Spacer -->
+            <DockPanel DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="10">
+                <Button x:Name="ButDeconnexion"
+                        Content="Déconnexion"
+                        Width="120"
+                        Height="32"
+                        Margin="10"
+                        VerticalAlignment="Center"
+                        Background="White"
+                        Foreground="#FFE30613"
+                        FontWeight="Bold" Click="ButDeconnexion_Click_1"/>
+            </DockPanel>
+        </DockPanel>
+
+        <!-- Contenu principal -->
+        <TabControl Margin="20" FontSize="14" FontWeight="Bold">
+            <TabItem Header="ACCUEIL">
+                <uc:Accueil Loaded="Accueil_Loaded"/>
+            </TabItem>
+            <TabItem Header="FAIRE INSCRIPTION">
+                <uc:Saisi_client />
+            </TabItem>
+            <TabItem Header="SYNTHESE DES SESSIONS">
+                <uc:DetailWindow />
+            </TabItem>
+            <TabItem Header="FICHE CLIENTS">
+                <uc:fiche_client/>
+            </TabItem>
+        </TabControl>
+
+    </DockPanel>
 </Window>
