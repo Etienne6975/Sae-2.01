@@ -17,7 +17,7 @@ namespace Sae_2._01.Model
             this.LesClients = new ObservableCollection<client>(new client().FindAll());
         }
 
-        internal ObservableCollection<client> LesClients
+        public ObservableCollection<client> LesClients
         {
             get
             {

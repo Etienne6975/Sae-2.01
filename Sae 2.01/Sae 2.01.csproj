@@ -10,7 +10,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Esf-Logo.png" />
+    <None Remove="Images\ESF.jpg" />
+    <None Remove="Images\ESFE.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Npgsql" Version="9.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Esf-Logo.png" />
+    <Resource Include="Images\ESF.jpg" />
+    <Resource Include="Images\ESFE.png" />
   </ItemGroup>
 
 </Project>

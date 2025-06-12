@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Sae_2._01.Model;
+using System.ComponentModel;
 using System.Net;
 using System.Text;
 using System.Windows;
@@ -11,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using table;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Sae_2._01
 {
@@ -19,7 +21,7 @@ namespace Sae_2._01
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static client lesClients  { get; set; }
+        public static client LesClients  { get; set; }
         public MainWindow()
         {
             ChargeData();
@@ -55,14 +57,15 @@ namespace Sae_2._01
         {
             try
             {
-                lesClients = new client();
-                this.DataContext = lesClients;
+                LesClients = new client();
+                this.DataContext = LesClients;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Problème lors de récupération des données,veuillez consulter votre admin");
-
+                MessageBox.Show("Erreur : " + ex.Message, "Détails", MessageBoxButton.OK, MessageBoxImage.Error);
                 Application.Current.Shutdown();
+
+                
             }
         }
     }

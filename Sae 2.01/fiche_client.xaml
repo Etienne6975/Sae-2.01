@@ -15,7 +15,8 @@
             Margin="0,196,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            ItemsSource="{Binding lesClients}">
+            ItemsSource="{Binding LesClients}"
+            AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
@@ -30,7 +31,7 @@
                     Binding="{Binding prenomclient}"
                     Header="Prenom" />
                 <DataGridTextColumn
-                    Width=""
+                    Width="120"
                     Binding="{Binding datenaissance}"
                     Header="date de naissance" />
                 <DataGridTextColumn
