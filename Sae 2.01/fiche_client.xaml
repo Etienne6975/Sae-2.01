@@ -25,23 +25,23 @@
                     Header="Numero Client" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding Nomclient,ValidatesOnExceptions=True}"
+                    Binding="{Binding Nomclient}"
                     Header="Nom" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding Prenomclient,ValidatesOnExceptions=True}"
+                    Binding="{Binding Prenomclient}"
                     Header="Prenom" />
                 <DataGridTextColumn
                     Width="120"
-                    Binding="{Binding Datenaissance,ValidatesOnExceptions=True,StringFormat='dd/MM/yyyy'}"
+                    Binding="{Binding Datenaissance,StringFormat='dd/MM/yyyy'}"
                     Header="date de naissance" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding Tel,ValidatesOnExceptions=True}"
+                    Binding="{Binding Tel}"
                     Header="telephone" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding Email,ValidatesOnExceptions=True}"
+                    Binding="{Binding Email}"
                     Header="Email" />
             </DataGrid.Columns>
         </DataGrid>
