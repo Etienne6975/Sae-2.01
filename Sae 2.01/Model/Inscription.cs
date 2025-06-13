@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sae_2._01
+namespace Sae_2._01.Model
 {
 
     internal class Inscription
