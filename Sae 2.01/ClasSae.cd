@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="table.client" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgQAABIAACAAiAAgAIgQCIAgAAGAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\client.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Sae_2._01.Model.DataAccess" Collapsed="true">
+    <Position X="12" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAgAAAABIBAAAABACBAAQAgAABAAAAA=</HashCode>
+      <FileName>Model\DataAccess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="table.employe" Collapsed="true">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAIAACACAAIAAAACAQAAAgEAA=</HashCode>
+      <FileName>Model\employe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sae_2._01.Model.Gestion" Collapsed="true">
+    <Position X="12.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAAAAAAAAAAAAAEAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Model\Gestion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sae_2._01.Model.Inscription" Collapsed="true">
+    <Position X="10" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAAAAIAAAAgAAACAAIAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Model\Inscription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sae_2._01.Model.LogError" Collapsed="true">
+    <Position X="13.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\LogError.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sae_2._01.Model.session" Collapsed="true">
+    <Position X="9" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUCQAACAAAGAgIBAgAQCAAgAAEGIUIAgAAAAIAgAkE=</HashCode>
+      <FileName>Model\session.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Sae_2._01.Model.ICrud&lt;T&gt;" Collapsed="true">
+    <Position X="12" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAQCAAgAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ICrud.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

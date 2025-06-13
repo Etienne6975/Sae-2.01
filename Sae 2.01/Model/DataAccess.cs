@@ -11,7 +11,7 @@ namespace Sae_2._01.Model
     public class DataAccess
     {
         private static readonly DataAccess instance = new DataAccess();
-        private readonly string connectionString = "Host=srv-peda-new;Port=5433;Username=atake;Password=9YPUaF;Database=SAE201_ESF;Options='-c search_path=atake'";
+        private string connectionString = "";
         private NpgsqlConnection connection;
 
         public static DataAccess Instance
@@ -22,12 +22,11 @@ namespace Sae_2._01.Model
             }
         }
 
-        //  Constructeur privé pour empêcher l'instanciation multiple
-        private DataAccess()
+        public void DefinirConnection(string connectionString)
         {
-
             try
             {
+                this.connectionString = connectionString;
                 connection = new NpgsqlConnection(connectionString);
             }
             catch (Exception ex)
@@ -38,7 +37,6 @@ namespace Sae_2._01.Model
         }
 
 
-        // pour récupérer la connexion (et l'ouvrir si nécessaire)
         public NpgsqlConnection GetConnection()
         {
             if (connection.State == ConnectionState.Closed || connection.State == ConnectionState.Broken)
@@ -58,7 +56,6 @@ namespace Sae_2._01.Model
             return connection;
         }
 
-        //  pour requêtes SELECT et retourne un DataTable ( table de données en mémoire)
         public DataTable ExecuteSelect(NpgsqlCommand cmd)
         {
             DataTable dataTable = new DataTable();
@@ -78,7 +75,6 @@ namespace Sae_2._01.Model
             return dataTable;
         }
 
-        //   pour requêtes INSERT et renvoie l'ID généré
 
         public int ExecuteInsert(NpgsqlCommand cmd)
         {
@@ -98,9 +94,6 @@ namespace Sae_2._01.Model
         }
 
 
-
-
-        //  pour requêtes UPDATE, DELETE
         public int ExecuteSet(NpgsqlCommand cmd)
         {
             int nb = 0;
@@ -118,7 +111,6 @@ namespace Sae_2._01.Model
 
         }
 
-        // pour requêtes avec une seule valeur retour  (ex : COUNT, SUM) 
         public object ExecuteSelectUneValeur(NpgsqlCommand cmd)
         {
             object res = null;
@@ -136,7 +128,6 @@ namespace Sae_2._01.Model
 
         }
 
-        //  Fermer la connexion 
         public void CloseConnection()
         {
             if (connection.State == ConnectionState.Open)

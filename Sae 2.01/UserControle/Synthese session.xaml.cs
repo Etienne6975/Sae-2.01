@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using table;
 
 namespace Sae_2._01
 {
@@ -25,6 +27,7 @@ namespace Sae_2._01
         {
             ChargeData();
             InitializeComponent();
+            dataGridCours.Items.Filter = RechercheMotClefSessions;
         }
 
         private void ChargeData()
@@ -40,6 +43,19 @@ namespace Sae_2._01
 
                 Application.Current.Shutdown();
             }
+        }
+
+        private bool RechercheMotClefSessions(object obj)
+        {
+            if (String.IsNullOrEmpty(textRechercheSemaine.Text))
+                return true;
+            session Session = obj as session;
+            return (Session.NumSession.ToString().StartsWith(textRechercheSemaine.Text, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private void textRechercheSemaine_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dataGridCours.ItemsSource).Refresh();
         }
     }
 }

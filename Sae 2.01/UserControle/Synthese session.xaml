@@ -27,6 +27,23 @@
                 <DataGridTextColumn Header="Tarif (€)" Binding="{Binding Tarif, StringFormat={}{0:F2}}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox
+         x:Name="textRechercheSemaine"
+         Width="257"
+         Height="23"
+         Margin="43,155,0,0"
+         HorizontalAlignment="Left"
+         VerticalAlignment="Top"
+         Text=""
+        TextWrapping="Wrap" TextChanged="textRechercheSemaine_TextChanged" />
+        <Label
+        Width="163"
+        Height="36"
+        Margin="43,114,0,0"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Content="Numéro session"
+        FontSize="18" />
     </Grid>
 
 
