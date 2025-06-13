@@ -22,7 +22,7 @@ namespace Sae_2._01
     /// </summary>
     public partial class fiche_client : UserControl
     {
-        private static Gestion Lagestion { get; set; }
+        public static Gestion Lagestion { get; set; }
 
         public fiche_client()
         {

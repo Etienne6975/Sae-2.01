@@ -1,4 +1,4 @@
-﻿<Window x:Class="Sae_2._01.Saisi_client"
+﻿<UserControl x:Class="Sae_2._01.Saisi_client"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -16,7 +16,6 @@
                         <TextBlock Text="Nom" FontSize="12" Foreground="Gray"/>
                         <TextBox Background="#FAFAFA" BorderThickness="0" Text="{Binding Nomclient,ValidatesOnExceptions=True}"/>
                     </StackPanel>
-                    <Image Source="/Images/edit.png" Width="16" Height="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
                 </DockPanel>
             </Border>
 
@@ -24,9 +23,8 @@
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Left" Width="300">
                         <TextBlock Text="Prénom" FontSize="12" Foreground="Gray"/>
-                        <TextBox Background="#FAFAFA" BorderThickness="0"/>
+                        <TextBox Background="#FAFAFA" BorderThickness="0" Text="{Binding Prenomclient,ValidatesOnExceptions=True}"/>
                     </StackPanel>
-                    <Image Source="/Images/edit.png" Width="16" Height="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
                 </DockPanel>
             </Border>
 
@@ -34,9 +32,8 @@
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Left" Width="300">
                         <TextBlock Text="Email" FontSize="12" Foreground="Gray"/>
-                        <TextBox Background="#FAFAFA" BorderThickness="0"/>
+                        <TextBox Background="#FAFAFA" BorderThickness="0" Text="{Binding Email,ValidatesOnExceptions=True}"/>
                     </StackPanel>
-                    <Image Source="/Images/edit.png" Width="16" Height="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
                 </DockPanel>
             </Border>
 
@@ -44,19 +41,8 @@
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Left" Width="300">
                         <TextBlock Text="Numéro de Téléphone" FontSize="12" Foreground="Gray"/>
-                        <TextBox Background="#FAFAFA" BorderThickness="0"/>
+                        <TextBox Background="#FAFAFA" BorderThickness="0" Text="{Binding Tel,ValidatesOnExceptions=True}"/>
                     </StackPanel>
-                    <Image Source="/Images/edit.png" Width="16" Height="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                </DockPanel>
-            </Border>
-
-            <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="3" Padding="5">
-                <DockPanel>
-                    <StackPanel DockPanel.Dock="Left" Width="300">
-                        <TextBlock Text="Adresse" FontSize="12" Foreground="Gray"/>
-                        <TextBox Background="#FAFAFA" BorderThickness="0"/>
-                    </StackPanel>
-                    <Image Source="/Images/edit.png" Width="16" Height="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
                 </DockPanel>
             </Border>
 
@@ -64,9 +50,9 @@
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Left" Width="300">
                         <TextBlock Text="Date de naissance" FontSize="12" Foreground="Gray"/>
-                        <TextBox Background="#FAFAFA" BorderThickness="0"/>
+                        <TextBox Background="#FAFAFA" BorderThickness="0" Text="{Binding Datenaissance, ValidatesOnExceptions=True}" Width="298"/>
                     </StackPanel>
-                    <Image Source="/Images/edit.png" Width="16" Height="16" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    
                 </DockPanel>
             </Border>
 
@@ -79,7 +65,7 @@
                     BorderBrush="Transparent"
                     Style="{StaticResource ESFStyle}"
                     Margin="0,20,0,0"
-                    Cursor="Hand" Click="butadd_Click"/>
+                    Cursor="Hand" Click="butadd_Click" />
         </StackPanel>
     </Grid>
-</Window>
+</UserControl>

@@ -130,9 +130,9 @@ namespace table
         public int Create()
         {
             int id = 0;
-            using (var cmd = new NpgsqlCommand("INSERT INTO client (nomclient, prenomclient, datenaissance, tel, email) " +
-                                               "VALUES (@nom, @prenom, @date, @tel, @mail) RETURNING numclient"))
+            using (var cmd = new NpgsqlCommand("INSERT INTO client (nomclient, prenomclient, datenaissance, tel, email) VALUES (@nom, @prenom, @date, @tel, @mail) RETURNING numclient"))
             {
+               
                 cmd.Parameters.AddWithValue("nom", this.Nomclient);
                 cmd.Parameters.AddWithValue("prenom", this.Prenomclient);
                 cmd.Parameters.AddWithValue("date", this.Datenaissance);
