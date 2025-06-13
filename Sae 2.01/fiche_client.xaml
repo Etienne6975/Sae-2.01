@@ -4,50 +4,64 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Sae_2._01.Model"
-    xmlns:model="clr-namespace:Sae_2._01.Model"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="584"
-    d:DesignWidth="550"
+    xmlns:model="clr-namespace:Sae_2._01.Model"
+    d:DesignHeight="533"
+    d:DesignWidth="954"
     mc:Ignorable="d">
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <model:Gestion x:Name="lagestion" />
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     <Grid>
         <DataGrid
-            Width="514"
-            Height="195"
-            Margin="0,196,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            ItemsSource="{Binding LesClients}"
-            AutoGenerateColumns="False">
+            x:Name="dgClient"
+            Margin="43,220,247,36"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding LesClients}">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Width="100"
-                    Binding="{Binding Numclient}"
+                    Binding="{Binding Numclient,ValidatesOnExceptions=True}"
                     Header="Numero Client" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding Nomclient}"
+                    Binding="{Binding Nomclient,ValidatesOnExceptions=True}"
                     Header="Nom" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding Prenomclient}"
+                    Binding="{Binding Prenomclient,ValidatesOnExceptions=True}"
                     Header="Prenom" />
                 <DataGridTextColumn
                     Width="120"
-                    Binding="{Binding Datenaissance}"
+                    Binding="{Binding Datenaissance,ValidatesOnExceptions=True,StringFormat='dd/MM/yyyy'}"
                     Header="date de naissance" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding Tel}"
+                    Binding="{Binding Tel,ValidatesOnExceptions=True}"
                     Header="telephone" />
                 <DataGridTextColumn
                     Width="*"
-                    Binding="{Binding Email}"
+                    Binding="{Binding Email,ValidatesOnExceptions=True}"
                     Header="Email" />
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox
+            x:Name="textRechercheNomPrenom"
+            Width="257"
+            Height="23"
+            Margin="43,155,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" TextChanged="textRechercheNomPrenom_TextChanged" />
+        <Label
+            Width="150"
+            Height="36"
+            Margin="43,114,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Nom ou prenom"
+            FontSize="18" />
 
     </Grid>
 </UserControl>

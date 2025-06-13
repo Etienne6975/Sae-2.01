@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sae_2._01.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,11 +20,26 @@ namespace Sae_2._01
     /// </summary>
     public partial class DetailWindow : UserControl
     {
+        private static Gestion laSessions { get; set; }
         public DetailWindow()
         {
+            ChargeData();
             InitializeComponent();
         }
-       
 
+        private void ChargeData()
+        {
+            try
+            {
+                laSessions = new Gestion();
+                this.DataContext = laSessions;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problème lors de récupération des données, veuillez consulter votre admin");
+
+                Application.Current.Shutdown();
+            }
+        }
     }
 }

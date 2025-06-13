@@ -3,21 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Sae_2._01"
+        xmlns:local="clr-namespace:Sae_2._01.Model"
+        xmlns:model="clr-namespace:Sae_2._01.Model"
+        d:DesignHeight="533"
+        d:DesignWidth="954"
         mc:Ignorable="d">
-     <Grid Margin="10">
-        <DataGrid x:Name="dataGridCours" AutoGenerateColumns="False" HeadersVisibility="Column" CanUserAddRows="False">
+    <!--<UserControl.DataContext>
+    <model:Gestion x:Name="laSession" />
+    </UserControl.DataContext>-->
+    <Grid Margin="10">
+        <DataGrid x:Name="dataGridCours" AutoGenerateColumns="False" HeadersVisibility="Column" CanUserAddRows="False" Margin="26,273,26,24" ItemsSource="{Binding LesSessions}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Semaine" Binding="{Binding Semaine}" Width="*" />
-                <DataGridTextColumn Header="Créneaux" Binding="{Binding Creneaux}" Width="2*" />
-                <DataGridTextColumn Header="Catégorie" Binding="{Binding Categorie}" Width="*" />
-                <DataGridTextColumn Header="Discipline" Binding="{Binding Discipline}" Width="*" />
-                <DataGridTextColumn Header="Public" Binding="{Binding Public}" Width="*" />
-                <DataGridTextColumn Header="Nombre max" Binding="{Binding NombreMax}" Width="*" />
-                <DataGridTextColumn Header="Places restantes" Binding="{Binding PlacesRestantes}" Width="*" />
+                <DataGridTextColumn Header="N° Session" Binding="{Binding NumSession}" Width="*" />
+                <DataGridTextColumn Header="Discipline" Binding="{Binding NumDiscipline}" Width="*" />
+                <DataGridTextColumn Header="Public" Binding="{Binding NumPublic}" Width="*" />
+                <DataGridTextColumn Header="Niveau" Binding="{Binding NumNiveau}" Width="*" />
+                <DataGridTextColumn Header="Année" Binding="{Binding Annee}" Width="*" />
+                <DataGridTextColumn Header="Semaine" Binding="{Binding NumSemaine}" Width="70" />
+                <DataGridTextColumn Header="Heure début" Binding="{Binding HeureDebut, StringFormat='hh\\:mm'}" Width="*" />
+                <DataGridTextColumn Header="Heure fin" Binding="{Binding HeureFin, StringFormat='hh\\:mm'}" Width="90" />
+                <DataGridTextColumn Header="Places max" Binding="{Binding NbPlaceMaximal}" Width="*" />
+                <DataGridTextColumn Header="Places dispo" Binding="{Binding NbPlaceDisponible}" Width="*" />
+                <DataGridTextColumn Header="Tarif (€)" Binding="{Binding Tarif, StringFormat={}{0:F2}}" Width="*" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
 
- 
+
 </UserControl>

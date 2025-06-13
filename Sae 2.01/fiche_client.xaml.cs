@@ -28,6 +28,7 @@ namespace Sae_2._01
         {
             ChargeData();
             InitializeComponent();
+            dgClient.Items.Filter = RechercheMotClefNomPrenom;
 
         }
         public void ChargeData()
@@ -43,6 +44,19 @@ namespace Sae_2._01
 
                 Application.Current.Shutdown();
             }
+        }
+        private bool RechercheMotClefNomPrenom(object obj)
+        {
+            if (String.IsNullOrEmpty(textRechercheNomPrenom.Text))
+                return true;
+            client unClient = obj as client;
+            return (unClient.Nomclient.StartsWith(textRechercheNomPrenom.Text, StringComparison.OrdinalIgnoreCase)
+            || unClient.Prenomclient.StartsWith(textRechercheNomPrenom.Text, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private void textRechercheNomPrenom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(dgClient.ItemsSource).Refresh();
         }
     }
 }
